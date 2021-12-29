@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://agitated-liskov-59589b.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/LiXin2014/InteriorConsultant_DevChallange">
       Solution
     </a>
     <span> | </span>
@@ -48,4 +48,4 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 ## Contact
 
-- GitHub [@your-username](https://github.com/LiXin2014)
+- GitHub [@LiXin2014](https://github.com/LiXin2014)
