@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #181719;
+    color: white;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1500px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* style for header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    border: 1px solid white;
+    width: fit-content;
+    padding: 8px;
+
+    font-family: 'Crimson Pro', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.laptop-nav {
+    display: flex;
+}
+
+.laptop-nav div {
+    margin: 0px 30px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.laptop-nav div.active {
+    font-weight: 700;
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+}
+
+.mobile-nav {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    right: -100vw;
+    background: #181719;
+    border-left: 1px solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    transition: transform 0.5s ease-in-out;
+}
+
+.mobile-nav--open {
+    transform: translateX(-100vw);
+}
+
+.mobile-nav div {
+    margin: 10px 0px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.mobile-nav div.active {
+    font-weight: 700;
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+}
+
+.hamburger-button {
+    border: none;
+    background: transparent;
+    display: none;
+
+    /* Below two lines are very important to still show hamburger icon when the mobile nav is open. */
+    position: relative;
+    z-index: 2;
+}
+
+.hamburger-button__bar {
+    height: 3px;
+    width: 22px;
+    background-color: white;
+    margin-top: 4px;
+    border-radius: 2px;
+
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transform-origin: 1px;
+}
+
+.hamburger-button--open .hamburger-button__bar:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger-button--open .hamburger-button__bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-button--open .hamburger-button__bar:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.hamburger-button__bar:nth-child(1) {
+    margin-top: 0;
+}
+
+/* style for main */
+main {
+    display: flex;
+    align-self: center;
+    margin: 50px 0;
+}
+
+/* style for main left part */
+main .design-info {
+    flex: 1;
+    align-self: center;
+}
+
+main .design-info .design-category {
+    font-family: 'Lora', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+}
+
+main .design-info .design-description {
+    font-size: 24px;
+    padding: 30px 0px;
+}
+
+main .design-info .design-readmore {
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+}
+
+main .design-info .line {
+    display: inline-block;
+    border-bottom: 2px solid;
+    width: 18px;
+    margin-bottom: 11px;
+    margin-left: 10px;
+}
+
+main .design-info .fa-caret-right {
+    align-self: center;
+}
+
+/* style for main right part */
+main .design-image {
+    flex: 2;
+    padding: 30px;
+}
+
+.designer-card {
+    width: 50%;
+    background-color: #181719;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 20px 26px 34px 26px;
+
+    position: relative;
+    top: -10%;
+    right: -40%;
+}
+
+.designer-card .designer {
+    display: flex;
+    align-items: center;
+}
+
+.designer-card .designer img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.designer-card .designer .designer-info {
+    margin-left: 20px;
+}
+
+.designer-card .designer .designer-name{
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.designer-card .designer .designer-category{
+    font-weight: 500;
+    font-size: 12px;
+    color: #828282;
+}
+
+.designer-card .designer-card-description {
+    font-family: 'Lora', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    width: 80%;
+    margin-top: 20px;
+}
+
+main img {
+    max-width: 100%;
+}
+
+/* style for footer */
+footer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #BDBDBD;
+}
+
+footer .created-by {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+footer .author {
+    font-weight: bold;
+    color: #BDBDBD;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        display: block;
+    }
+
+    main .design-info .design-category {
+        font-size: 3rem;
+    }
+
+    main .design-info .design-description, main .design-info .design-readmore {
+        font-size: 1.2rem;
+    }
+
+    .designer-card {
+        width: 80%;
+        top: -50px;
+        right: -15%;
+    }
+
+    .laptop-nav {
+        display: none;
+    }
+
+    .hamburger-button {
+        display: inline-block;
+    }
+}
+
+
+/* NOTES:
+1. z-index (when I make the mobile-nav--open to show up, the designer card would also show up if I don't give mobile-nav--open z-index 1. And in order the hamburger-button to show up, I gave it position relative and a higher z-index )
+   Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky) and flex items (elements that are direct children of display:flex elements).
+   Note: If two positioned elements overlap without a z-index specified, the element positioned last in the HTML code will be shown on top. 
+2. Had to watch video https://www.youtube.com/watch?v=XwTjdPp-T_M for mobile navigation implementation.
+*/
